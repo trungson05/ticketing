@@ -1,0 +1,13 @@
+# Local credentials and Python environment
+.env
+.env.*
+.venv/
+
+# Build output and caches
+[Bb]in/
+[Oo]bj/
+__pycache__/
+*.pyc
+
+# Instructor outline with student information
+/docs/DeCuong_ChiTiet.md
