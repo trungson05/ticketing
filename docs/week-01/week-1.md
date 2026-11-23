@@ -82,3 +82,21 @@ Kết quả là cơ sở thực nghiệm để nghiên cứu các giải pháp k
  
 
 
+
+## 5. Thử nghiệm tốc độ phản hồi tiếng Việt với Ollama
+
+Ngày đo 23/11/2026 (UTC+7). Máy chạy Windows 10 Pro 22H2 (build 19045), CPU Intel(R) Core(TM) i5-10310U CPU @ 1.70GHz, RAM khả dụng cho hệ điều hành 15,8 GiB. Ollama 0.40.17, cột PROCESSOR của ollama ps hiển thị 100% CPU.
+
+Mô hình qwen2.5:0.5b (Q4_K_M, ID a8b0c5157701, giấy phép Apache 2.0). Mỗi câu được gửi bằng một lệnh ollama run --verbose riêng, chạy tuần tự và không kèm lịch sử hội thoại. Lấy total duration do Ollama ghi khi hoàn tất câu trả lời, quy đổi sang giây và làm tròn ba chữ số thập phân. Trước câu đầu, mô hình chưa có trong bộ nhớ.
+
+| Câu | Nội dung hỏi | Tổng (giây) | Nạp (giây) | Token đầu ra |
+| --- | --- | ---: | ---: | ---: |
+| 1 | Vé điện tử là gì? | 3,680 | 1,075 | 113 |
+| 2 | Vì sao hệ thống đặt vé chỉ giữ chỗ trong thời gian giới hạn? | 4,099 | 0,006 | 192 |
+| 3 | Overbooking trong bán vé sự kiện là gì? | 1,456 | 0,004 | 61 |
+
+Câu 1 nhầm vé điện tử với giao dịch tiền điện tử và trả lời dài hơn hai câu. Câu 2 có nhắc đến thanh toán nhưng bỏ sót việc trả vé về kho khi hết hạn và trả lời dài hơn hai câu. Câu 3 không nêu được việc bán nhiều vé hơn số lượng có thể cung cấp.
+
+Ba lượt thử mất 1,456–4,099 giây/câu. Thời gian có thể thay đổi theo trạng thái nạp mô hình và độ dài câu trả lời, nên kết quả dùng làm mốc cho mô hình 0,5B trên máy thử nghiệm. Cả ba câu trả lời dùng tiếng Việt. Sai sót đã ghi nhận cho thấy cần đánh giá thêm chất lượng trước khi chọn cỡ mô hình cho chức năng tư vấn.
+
+Nhật ký thực nghiệm lưu lệnh, câu trả lời nguyên văn và số liệu gốc. [Đầu ra Ollama](../experiments/week-01-ollama.txt) · [Thông tin mô hình](https://ollama.com/library/qwen2.5:0.5b)

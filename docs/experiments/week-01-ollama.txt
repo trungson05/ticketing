@@ -1,0 +1,70 @@
+THỬ NGHIỆM OLLAMA TUẦN 1
+
+Ngày đo 23/11/2026 (UTC+7). Máy chạy Windows 10 Pro 22H2 (build 19045), CPU Intel(R) Core(TM) i5-10310U CPU @ 1.70GHz, RAM khả dụng cho hệ điều hành 15,8 GiB. Ollama 0.40.17, cột PROCESSOR của ollama ps hiển thị 100% CPU.
+Mô hình: qwen2.5:0.5b (Q4_K_M, Apache 2.0)
+Nguồn mô hình: https://ollama.com/library/qwen2.5:0.5b
+Máy chủ cục bộ: 127.0.0.1:11434
+
+Các khối sau lưu đầu ra CLI theo thứ tự chạy, đã bỏ mã điều khiển hiển thị của terminal.
+
+> ollama --version
+ollama version is 0.40.17
+
+> ollama ls
+NAME            ID              SIZE      MODIFIED
+qwen2.5:0.5b    a8b0c5157701    397 MB    Less than a second ago
+
+> ollama ps
+NAME    ID    SIZE    PROCESSOR    CONTEXT    RUNNER    UNTIL
+
+> ollama run --verbose qwen2.5:0.5b "Vé điện tử là gì? Trả lời bằng tiếng Việt trong tối đa 2 câu."
+Vé điện tử là một phương thức giao dịch tiền điện tử thông qua phương tiện truyền thông điện tử. Chi phí vận chuyển, thời gian và tiện ích khác là lợi thế của vé điện tử. Vé điện tử là một phần trong hệ thống giao dịch tiền điện tử (Binance, Huobi, XRP, BCH, etc.) mà chúng tôi cung cấp. Bạn có thể tham khảo thêm thông tin chi tiết về dịch vụ vay tín dụng và các giải pháp giao dịch tiền mặt khác trên platform này.
+total duration:       3.6799303s
+load duration:        1.0749267s
+prompt eval count:    49 token(s)
+prompt eval duration: 370.031ms
+prompt eval rate:     132.42 tokens/s
+eval count:           113 token(s)
+eval duration:        2.220537s
+eval rate:            50.89 tokens/s
+
+> ollama ps
+NAME            ID              SIZE      PROCESSOR    CONTEXT    RUNNER      UNTIL
+qwen2.5:0.5b    a8b0c5157701    486 MB    100% CPU     4096       llamacpp    4 minutes from now
+
+> ollama run --verbose qwen2.5:0.5b "Vì sao hệ thống đặt vé chỉ giữ chỗ trong thời gian giới hạn? Trả lời bằng tiếng Việt trong tối đa 2 câu."
+Sự lựa chọn đặt vé chỉ giữ chỗ trong thời gian giới hạn có sự khác biệt về nguyên nhân:
+
+1. Tính thanh khoản: Thời gian giới hạn cho các đặt vé chỉ giúp đảm bảo giá vé được khách hàng nhận đúng. Nếu khách hàng không có thời gian để đặt vé, họ sẽ phải tìm kiếm một phương án khác hoặc trả phí khác. Điều này giúp giảm thiểu chênh lệch giá vé, đồng thời tăng khả năng kiếm tiền từ các đặt vé chỉ.
+
+2. Quy trình thanh toán: Trong một hệ thống đặt vé chỉ, thời gian giới hạn giúp quy trình thanh toán của khách hàng được kiểm soát hơn. Khi khách hàng không có thời gian để đặt vé, họ có thể thanh toán trước hoặc không phải đợi lâu để chờ. Điều này có thể giúp tối ưu hóa thời gian và chi phí thanh toán của khách hàng.
+total duration:       4.0994541s
+load duration:        5.988ms
+prompt eval count:    60 token(s)
+prompt eval cached:   25 token(s)
+prompt eval duration: 283.526ms
+prompt eval rate:     123.45 tokens/s
+eval count:           192 token(s)
+eval duration:        3.805145s
+eval rate:            50.46 tokens/s
+
+> ollama run --verbose qwen2.5:0.5b "Overbooking trong bán vé sự kiện là gì? Trả lời bằng tiếng Việt trong tối đa 2 câu."
+Overbooking trong bán vé sự kiện là việc thông qua việc lên kế hoạch trước để có đủ số lượng vé cho các mục tiêu và không có bị loại bỏ hoặc không thể tham gia. Điều này thường được dùng để giảm thiểu khó khăn trong việc sắp xếp và xử lý vé sự kiện.
+total duration:       1.4557543s
+load duration:        3.7341ms
+prompt eval count:    52 token(s)
+prompt eval cached:   24 token(s)
+prompt eval duration: 229.068ms
+prompt eval rate:     122.23 tokens/s
+eval count:           61 token(s)
+eval duration:        1.218234s
+eval rate:            50.07 tokens/s
+
+> ollama ps
+NAME            ID              SIZE      PROCESSOR    CONTEXT    RUNNER      UNTIL
+qwen2.5:0.5b    a8b0c5157701    486 MB    100% CPU     4096       llamacpp    4 minutes from now
+
+TỔNG HỢP TỪ TOTAL DURATION
+Câu 1: 3,680 giây (nạp mô hình 1,075 giây, 113 token đầu ra).
+Câu 2: 4,099 giây (nạp mô hình 0,006 giây, 192 token đầu ra).
+Câu 3: 1,456 giây (nạp mô hình 0,004 giây, 61 token đầu ra).
