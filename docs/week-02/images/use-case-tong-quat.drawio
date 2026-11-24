@@ -1,0 +1,55 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="week-02" name="Use Case tổng quát">
+    <mxGraphModel grid="1" gridSize="10" page="1" pageScale="1" pageWidth="1080" pageHeight="666" background="#FFFFFF">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="system" value="Nền tảng quản lý và đặt vé sự kiện trực tuyến" style="rounded=0;whiteSpace=wrap;html=0;verticalAlign=top;spacingTop=12;fontFamily=Arial;fontSize=22;fontStyle=1;fontColor=#18334B;fillColor=#FFFFFF;strokeColor=#516C80;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="170" y="20" width="740" height="626" as="geometry"/>
+        </mxCell>
+        <mxCell id="customer" value="Khách hàng" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;spacingTop=8;html=0;fontFamily=Arial;fontSize=18;fontStyle=1;fontColor=#18334B;strokeColor=#24445C;strokeWidth=2;fillColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="53" y="291" width="54" height="84" as="geometry"/>
+        </mxCell>
+        <mxCell id="organizer" value="Ban tổ chức" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;spacingTop=8;html=0;fontFamily=Arial;fontSize=18;fontStyle=1;fontColor=#18334B;strokeColor=#24445C;strokeWidth=2;fillColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="973" y="291" width="54" height="84" as="geometry"/>
+        </mxCell>
+        <mxCell id="UC-01" value="UC-01&#xa;Quản lý tài khoản" style="ellipse;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=18;fontColor=#18334B;fillColor=#EFF5F8;strokeColor=#43657E;strokeWidth=2;" vertex="1" parent="system">
+          <mxGeometry x="174" y="63" width="392" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="UC-02" value="UC-02&#xa;Quản lý sự kiện và hạng vé" style="ellipse;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=18;fontColor=#18334B;fillColor=#EFF5F8;strokeColor=#43657E;strokeWidth=2;" vertex="1" parent="system">
+          <mxGeometry x="174" y="175" width="392" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="UC-03" value="UC-03&#xa;Đặt vé, thanh toán và phát hành vé" style="ellipse;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=18;fontColor=#18334B;fillColor=#EFF5F8;strokeColor=#43657E;strokeWidth=2;" vertex="1" parent="system">
+          <mxGeometry x="174" y="287" width="392" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="UC-04" value="UC-04&#xa;Trợ lý AI cho người mua" style="ellipse;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=18;fontColor=#18334B;fillColor=#EFF5F8;strokeColor=#43657E;strokeWidth=2;" vertex="1" parent="system">
+          <mxGeometry x="174" y="399" width="392" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="UC-05" value="UC-05&#xa;Công cụ AI cho nhà tổ chức" style="ellipse;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=18;fontColor=#18334B;fillColor=#EFF5F8;strokeColor=#43657E;strokeWidth=2;" vertex="1" parent="system">
+          <mxGeometry x="174" y="511" width="392" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="customer-account" edge="1" parent="1" source="customer" target="UC-01" style="endArrow=none;startArrow=none;strokeColor=#516C80;strokeWidth=2;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="customer-events" edge="1" parent="1" source="customer" target="UC-02" style="endArrow=none;startArrow=none;strokeColor=#516C80;strokeWidth=2;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="customer-booking" edge="1" parent="1" source="customer" target="UC-03" style="endArrow=none;startArrow=none;strokeColor=#516C80;strokeWidth=2;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="customer-ai" edge="1" parent="1" source="customer" target="UC-04" style="endArrow=none;startArrow=none;strokeColor=#516C80;strokeWidth=2;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="organizer-account" edge="1" parent="1" source="organizer" target="UC-01" style="endArrow=none;startArrow=none;strokeColor=#516C80;strokeWidth=2;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="organizer-events" edge="1" parent="1" source="organizer" target="UC-02" style="endArrow=none;startArrow=none;strokeColor=#516C80;strokeWidth=2;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="organizer-ai" edge="1" parent="1" source="organizer" target="UC-05" style="endArrow=none;startArrow=none;strokeColor=#516C80;strokeWidth=2;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
